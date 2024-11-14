@@ -1,0 +1,88 @@
+project:
+  type: book
+  execute-dir: project
+  output-dir: _manuscrit
+
+execute: 
+  echo: false
+  warning: false
+  message: false
+
+book:
+  title: "Intitulé du mémoire" 
+  author: "Auteur"
+  output-file: "memoire"
+  chapters:
+    - index.qmd
+    - 01-materiel-methodes.qmd
+    - 02-resultats.qmd
+    - 03-discussion.qmd
+    - 04-conclusion.qmd
+    - references.qmd
+  language: fr
+
+bibliography: references.bib
+csl: bulletins-et-memoires-de-la-societe-d-anthropologie-de-paris-fr.csl
+lang: fr
+tbl-cap-location: top
+
+format:
+  pdf:
+    documentclass: report
+    classoption: [a4paper, 12pt]
+    pdf-engine: pdflatex
+    template-partials:
+      - "tex/_titlepage.tex"
+      - "tex/before-body.tex"
+      - "tex/toc.tex"
+      - "tex/after-body.tex"
+    include-in-header: 
+      - text: | 
+          % Dimension des pages :
+          \usepackage{a4wide}
+          \usepackage{setspace} % interlignes perso
+          % Polices et encodage :
+          \usepackage[utf8]{inputenc}
+          \usepackage[T1]{fontenc}
+          \usepackage{fourier} % ~ équivalent au Times New Roman
+          % Normes typo françaises :
+          %\usepackage[french]{babel}
+          % Personnalisation des titres :
+          \usepackage[pagestyles]{titlesec}
+          % Inclusion de figures :
+          \usepackage{float}
+          \usepackage{graphicx}
+          % Inclusion d'hyperliens :
+          \usepackage{hyperref}
+          \usepackage{url}
+          % Mise en page des tables :
+          \usepackage{booktabs}
+          \usepackage{tabularx}
+          % Commandes perso :
+          \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+          % Profondeur de numérotation :
+          \setcounter{secnumdepth}{4} % dans le texte
+          % Ajout d'un "." après le titre des sections :
+          \titlelabel{\thetitle.\quad}
+          % Interligne 1.5 :
+          \onehalfspacing
+          % Style de l'en-tête et du pied de page :
+          \newpagestyle{main}[\small]{%
+            \setheadrule{.55pt}%               ligne horizontale pour l'en-tête
+            \sethead[\thepage]%                à gauche des pages paires
+            []%                                au centre des pages paires
+            [\textit{{\thechapter}. $\;\;$ \chaptertitle}]%    à droite des pp. paires
+            {\S \textit{{\thesection}. $\;\;$ \sectiontitle}}% gauche impair
+            {}%                                centre impair
+            {\thepage}%                        droite impair
+          }
+          % Autres packages en vrac :
+          \usepackage{indentfirst}
+          \setlength{\parindent}{1cm}
+          \usepackage{fvextra}
+          \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+    toc: true
+    toc-depth: 4
+    lot: true
+    lof: true
+    number-sections: TRUE

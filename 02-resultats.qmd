@@ -1,0 +1,55 @@
+# Résultats
+
+Nullam eu ante vel est convallis dignissim. Fusce suscipit, wisi nec
+facilisis facilisis, est dui fermentum leo, quis tempor ligula erat
+quis odio. Nunc porta vulputate tellus. Nunc rutrum turpis sed pede.
+Sed bibendum. Aliquam posuere. Nunc aliquet, augue nec adipiscing
+interdum, lacus tellus malesuada massa, quis varius mi purus non odio.
+Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue
+ornare nulla, non luctus diam neque sit amet urna. Curabitur vulputate
+vestibulum lorem. Fusce sagittis, libero non molestie mollis, magna
+orci ultrices dolor, at vulputate neque nulla lacinia eros. Sed id
+ligula quis est convallis tempor. Curabitur lacinia pulvinar nibh. Nam
+a sapien.
+
+```{r}
+#| echo: false
+library(knitr)
+```
+
+
+## Insérer des figures externes
+
+Voir [la documentation de Quarto](https://quarto.org/docs/authoring/figures.html) à ce sujet.
+
+Des images externes (au format .jpg ou .png, par exemple) peuvent être
+insérées, comme en @fig-pingouin.
+
+![Un pingouin *Alca torda*.](./images/alca_torda.jpg){#fig-pingouin width=50%}
+
+## Produire des figures à l'aide de blocs de code R
+
+Un exemple en @fig-sepal.
+
+```{r}
+#| echo: false
+#| label: fig-sepal
+#| fig-cap: Longueur des sépales d'iris de leur espèce.
+#| fig-asp: 1
+#| out-width: 50%
+boxplot(Sepal.Length ~ Species, data = iris)
+```
+
+## Produire des tables à l'aide de blocs de code R
+
+Un exemple en @tbl-sepal.
+
+```{r}
+#| echo: false
+#| label: tbl-sepal
+#| tbl-cap: Moyennes des dimensions de fleurs d'iris en fonction de l'espèce.
+aggregate(iris[, 1:4], by = list(Species = iris$Species), FUN = mean) |>
+    kable()
+```
+
+

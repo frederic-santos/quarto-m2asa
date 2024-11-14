@@ -1,0 +1,20 @@
+# Introduction
+
+## Insérer des références bibliographiques
+
+Les normes formelles du mémoire de M2[^index-1] demandent d'utiliser le style des BMSAP ou des BSPF. Le style BMSAP est grosso modo le style APA6, et est disponible sous forme de fichier CSL.
+
+[^index-1]: Elles sont disponibles [sur le site web de PACEA](https://www.pacea.u-bordeaux.fr/wp-content/uploads/2021/02/Note_normes_me_moire_M2.pdf).
+
+Avec ce style, on peut faire des citations non-parenthésées :
+@adams2006_ResolutionSmallscaleCommingling décrit le tri
+ostéométrique...
+
+On peut aussi faire des citations parenthésées
+[@adams2008_RecoveryAnalysisIdentification]. Bien sûr, elles
+peuvent être multiples [@adams2006_ResolutionSmallscaleCommingling; @agbolade2020_MorphometricApproach3D].
+
+## État de l'art
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
