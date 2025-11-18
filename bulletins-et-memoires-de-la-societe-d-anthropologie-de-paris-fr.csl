@@ -22,7 +22,7 @@
     <category field="humanities"/>
     <summary>&gt;Style bibliographique des BMSAP.</summary>
     <eissn>1777-5469</eissn>
-    <updated>2024-10-23T15:00:00+00:00</updated>
+    <updated>2025-05-07T08:00:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <!-- Variantes linguistiques -->
@@ -187,6 +187,12 @@
           <date variable="accessed" form="text" suffix=")."/>
         </group>
       </else-if>
+      <else-if type="speech" match="any">
+        <group delimiter="">
+	  <text variable="event-title" prefix="Communication orale présentée à " suffix=". "/>
+	  <text variable="event-place" suffix="."/>
+        </group>
+      </else-if>
       <else>
         <choose>
           <if type="graphic">
@@ -212,8 +218,8 @@
         <choose>
           <if variable="version">
             <group delimiter=" " suffix=", ">
-              <text variable="title"/>
-              <text variable="genre" prefix=" " suffix="." text-case="capitalize-first"/>
+              <text variable="title" suffix=". "/>
+              <text variable="genre" suffix="." text-case="capitalize-first"/>
               <text variable="medium" prefix=" [" suffix="]" text-case="capitalize-first"/>
               <group delimiter=" " prefix="(" suffix=")">
                 <text term="version"/>
@@ -222,7 +228,7 @@
             </group>
           </if>
           <else>
-            <text variable="title"/>
+            <text variable="title" suffix=". "/>
             <text variable="genre" prefix=" " suffix="." text-case="capitalize-first"/>
             <text variable="medium" prefix=" [" suffix="]" text-case="capitalize-first"/>
           </else>
@@ -291,7 +297,7 @@
               </date>
               <text variable="year-suffix"/>
               <choose>
-                <if type="article-journal bill book chapter legal_case legislation report song thesis" match="none">
+                <if type="article-journal bill book chapter legal_case legislation report speech thesis" match="none">
                   <date variable="issued" prefix=",">
                     <date-part prefix=" " name="day" range-delimiter=" au "/>
                     <date-part prefix=" " name="month"/>
